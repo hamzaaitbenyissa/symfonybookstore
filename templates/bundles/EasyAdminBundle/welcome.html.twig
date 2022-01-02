@@ -1,0 +1,13 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{# {% block content_title "Bienvenu dans l'administration" %} #}
+
+{% block main  %}
+	<div class="content">
+		<h1 class="text-center">Bienvenu dans l'administration</h1>
+		<div class="container p-4">
+			<img class="rounded mx-auto d-block" src={{asset('images/admin.png')}} width="50%"/>
+		</div>
+
+	{% endblock %}

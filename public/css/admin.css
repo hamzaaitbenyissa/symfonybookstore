@@ -1,0 +1,14 @@
+:root {
+    /* make the backend contents as wide as the browser window */
+    /* --body-max-width: 100%; */
+    /* change the background color of the  */
+    /* --body-bg: #000814; */
+    /* make the base font size smaller */
+    /* --font-size-base: 13px; */
+    /* remove all border radius to make corners straight */
+
+    --sidebar-bg: #001027;
+
+    --sidebar-logo-color: white;
+    --sidebar-menu-color: white;
+}

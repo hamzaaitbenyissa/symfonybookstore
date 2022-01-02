@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bookstore
+{% endblock %}
+
+{% block style %}
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+
+	<h1>Livres
+		<i class="bi bi-book"></i>
+	</h1>
+
+
+	<table class="table table-dark table-hover">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Isbn</th>
+				<th>Titre</th>
+				<th>Nombre_pages</th>
+				<th>Date_de_parution</th>
+				<th>Note</th>
+				<th>Genres</th>
+				<th>Auteurs</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for livre in livres %}
+				<tr>
+					<td>{{ livre.id }}</td>
+					<td>{{ livre.isbn }}</td>
+					<td>{{ livre.titre }}</td>
+					<td>{{ livre.nombrePages }}</td>
+					<td>{{ livre.dateDeParution ? livre.dateDeParution|date('Y-m-d') : '' }}</td>
+					<td>{{ livre.note }}</td>
+					<td>
+						<ul>
+							{% for genre in livre.genres %}
+								<li>
+									{{genre}}
+								</li>
+							{% endfor %}
+						</ul>
+					</td>
+
+					<td>
+						<ul>
+							{% for auteur in livre.auteurs %}
+								<li>
+									{{auteur}}
+								</li>
+							{% endfor %}
+						</ul>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="7">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}
