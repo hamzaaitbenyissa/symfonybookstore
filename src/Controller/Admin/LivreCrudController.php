@@ -23,7 +23,7 @@ class LivreCrudController extends AbstractCrudController
             // IdField::new('id'),
             // TextField::new('title'),
             // TextEditorField::new('description'),
-
+            
             'isbn',
             TextField::new('titre'),
             IntegerField::new('nombre_pages')->onlyOnIndex(),
