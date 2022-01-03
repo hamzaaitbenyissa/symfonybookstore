@@ -3,12 +3,14 @@
 {% block title %}Livre index
 {% endblock %}
 
-
+{% block style %}
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
 
 {% block body %}
-	<h1>Livre index</h1>
+	<h1>Livres</h1>
 
-	<table class="table">
+	<table class="table table-dark">
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -30,8 +32,8 @@
 					<td>{{ livre.dateDeParution ? livre.dateDeParution|date('Y-m-d') : '' }}</td>
 					<td>{{ livre.note }}</td>
 					<td>
-						<a href="{{ path('livre_show', {'id': livre.id}) }}">show</a>
-						<a href="{{ path('livre_edit', {'id': livre.id}) }}">edit</a>
+						<a class="m-2" href="{{ path('livre_show', {'id': livre.id}) }}"><i class="bi bi-eye-fill"></i></a>
+						<a href="{{ path('livre_edit', {'id': livre.id}) }}"><i class="bi bi-pencil-square"></i></a>
 					</td>
 				</tr>
 			{% else %}

@@ -2,15 +2,20 @@
 
 {% block title %}Genre index{% endblock %}
 
-{% block body %}
-    <h1>Genre index</h1>
+{% block style %}
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
 
-    <table class="table">
+
+{% block body %}
+    <h1>Genres</h1>
+
+    <table class="table table-dark">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Nom</th>
-                <th>actions</th>
+                {# <th>actions</th> #}
             </tr>
         </thead>
         <tbody>
@@ -18,10 +23,10 @@
             <tr>
                 <td>{{ genre.id }}</td>
                 <td>{{ genre.nom }}</td>
-                <td>
+                {# <td>
                     <a href="{{ path('genre_show', {'id': genre.id}) }}">show</a>
                     <a href="{{ path('genre_edit', {'id': genre.id}) }}">edit</a>
-                </td>
+                </td> #}
             </tr>
         {% else %}
             <tr>
@@ -31,5 +36,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('genre_new') }}">Create new</a>
+    {# <a href="{{ path('genre_new') }}" class="btn btn-primary">Create new</a> #}
 {% endblock %}
