@@ -16,3 +16,16 @@ body {
 }
 
 
+a {
+    text-decoration: wavy;
+    margin-left: 4px;
+}
+
+#edit {
+    color: azure;
+}
+
+#voir {
+    color: rgb(255, 230, 0);
+}
+

@@ -14,29 +14,35 @@
 
 		<thead>
 			<tr>
-				<th>Id</th>
 				<th>Nom</th>
 				<th>Sexe</th>
 				<th>Date_de_naissance</th>
 				<th>Nationalite</th>
-				<th>actions</th>
+				{% if app.user and app.user.roles[0]=="ROLE_ADMIN"%}
+					<th>actions</th>
+				{% endif %}
 			</tr>
 		</thead>
 		<tbody>
 			{% for auteur in auteurs %}
 				<tr>
-					<td>{{ auteur.id }}</td>
 					<td>{{ auteur.nomPrenom }}</td>
 					<td>{{ auteur.sexe }}</td>
 					<td>{{ auteur.dateDeNaissance ? auteur.dateDeNaissance|date('Y-m-d') : '' }}</td>
 					<td>{{ auteur.nationalite | country_name }}</td>
 
-					<td>
-						<a href="{{ path('auteur_show', {'id': auteur.id}) }}">show</a>
-						{% if app.user and app.user.roles[0]=="ROLE_ADMIN"  %}
-							<a href="{{ path('auteur_edit', {'id': auteur.id}) }}">edit</a>
-						{% endif %}
-					</td>
+					{% if app.user and app.user.roles[0]=="ROLE_ADMIN"  %}
+						<td>
+							<a id="voir" href="{{ path('auteur_show', {'id': auteur.id}) }}">
+								<i class="bi bi-eye-fill"></i>
+							</a>
+
+							<a id="edit"  href="{{ path('auteur_edit', {'id': auteur.id}) }}">
+								<i class="bi bi-pencil-square"></i>
+							</a>
+						</td>
+
+					{% endif %}
 				</tr>
 			{% else %}
 				<tr>

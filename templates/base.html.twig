@@ -7,7 +7,7 @@
 			{% endblock %}
 		</title>
 		<link
-		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		rel="icon" href="{{asset ('images/icon.png') }}">
 		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 		{% block stylesheets %}
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
@@ -38,20 +38,58 @@
 	<body>
 		<div class="container p-3">
 
-			{% if not app.user %}
-				<a class="login" href="/login">Login
-					<i class="bi bi-box-arrow-in-right"></i>
-				</a>
-			{% endif %}
+			<div class="row menu">
+				<div class="col-6">
+					<ul>
+						<li>
+							<a href="/">Bookstore
+								<i class="bi bi-house"></i>
+							</a>
+						</li>
 
-			{% if app.user %}
-				<a class="login float-end" href="/logout">
-					<i class="bi bi-box-arrow-in-left"></i>Logout
-				</a>
-			{% endif %}
+						<li>
+							<a href="/livre">Livres
+								<i class="bi bi-book-half"></i>
+							</a>
+						</li>
+						<li>
+							<a href="/auteur">Auteurs
+								<i class="bi bi-person-circle"></i>
+							</a>
+						</li>
 
+						<li>
+							<a href="/genre">Genres
+								<i class="bi bi-hash"></i>
+							</a>
+						</li>
+
+						{% if app.user and app.user.roles[0]=="ROLE_ADMIN"%}
+							<li>
+								<a href="/admin">Administration
+									<i class="bi bi-gear"></i>
+								</a>
+							</li>
+						{% endif %}
+
+					</ul>
+				</div>
+
+				<div class="col-2">
+					{% if app.user %}
+						<a class="login" href="/logout">
+							<i class="bi bi-box-arrow-in-left"></i>Logout
+						</a>
+					{% endif %}
+
+					{% if not app.user %}
+						<a class="login" href="/login">Login
+							<i class="bi bi-box-arrow-in-right"></i>
+						</a>
+					{% endif %}
+				</div>
+			</div>
 			{% block body %}{% endblock %}
 		</div>
 	</body>
-
 </html>

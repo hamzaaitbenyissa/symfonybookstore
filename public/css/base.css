@@ -4,9 +4,8 @@ a.login {
     font-family: monospace;
     font-style: oblique;
     font-weight: bold;
+    text-decoration: wavy;
 }
-
-
 
 .dataTables_filter,
 .dataTables_length,
@@ -14,5 +13,27 @@ a.login {
 
     color: white;
     font-weight: bolder;
+}
 
+.menu ul {
+    display: contents;
+    list-style: none;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.menu ul li a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: wavy;
+}
+
+
+.menu{
+display: flex;
+justify-content: space-between;
+width: 110%;
 }

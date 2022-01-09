@@ -10,7 +10,7 @@
 {% block body %}
 
 
-	<h1>Livres
+	<h1>Bookstore
 		<i class="bi bi-book"></i>
 	</h1>
 
@@ -18,7 +18,6 @@
 	<table id="example" class="table table-dark table-striped table-hover" style="width:100%">
 		<thead>
 			<tr>
-				<th>Id</th>
 				<th>Isbn</th>
 				<th>Titre</th>
 				<th>Nombre_pages</th>
@@ -31,7 +30,6 @@
 		<tbody>
 			{% for livre in livres %}
 				<tr>
-					<td>{{ livre.id }}</td>
 					<td>{{ livre.isbn }}</td>
 					<td>{{ livre.titre }}</td>
 					<td>{{ livre.nombrePages }}</td>

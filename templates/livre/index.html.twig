@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block style %}
-	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/books.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -13,34 +13,36 @@
 	<table id="example" class="table table-dark table-striped table-hover" style="width:100%">
 		<thead>
 			<tr>
-				<th>Id</th>
 				<th>Isbn</th>
 				<th>Titre</th>
 				<th>Nombre_pages</th>
 				<th>Date_de_parution</th>
 				<th>Note</th>
-				<th>actions</th>
+				{% if app.user and app.user.roles[0]=="ROLE_ADMIN"  %}
+					<th>actions</th>
+				{% endif %}
 			</tr>
 		</thead>
 		<tbody>
 			{% for livre in livres %}
 				<tr>
-					<td>{{ livre.id }}</td>
 					<td>{{ livre.isbn }}</td>
 					<td>{{ livre.titre }}</td>
 					<td>{{ livre.nombrePages }}</td>
 					<td>{{ livre.dateDeParution ? livre.dateDeParution|date('Y-m-d') : '' }}</td>
 					<td>{{ livre.note }}</td>
-					<td>
-						<a class="m-2" href="{{ path('livre_show', {'id': livre.id}) }}">
-							<i class="bi bi-eye-fill"></i>
-						</a>
-						{% if app.user and app.user.roles[0]=="ROLE_ADMIN"%}
-							<a href="{{ path('livre_edit', {'id': livre.id}) }}">
+
+					{% if app.user and app.user.roles[0]=="ROLE_ADMIN"%}
+						<td>
+							<a id="voir" class="m-2" href="{{ path('livre_show', {'id': livre.id}) }}">
+								<i class="bi bi-eye-fill"></i>
+							</a>
+							<a id="edit" href="{{ path('livre_edit', {'id': livre.id}) }}">
 								<i class="bi bi-pencil-square"></i>
 							</a>
-						{% endif %}
-					</td>
+						</td>
+					{% endif %}
+
 				</tr>
 			{% else %}
 				<tr>

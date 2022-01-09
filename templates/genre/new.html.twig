@@ -3,9 +3,9 @@
 {% block title %}New Genre{% endblock %}
 
 {% block body %}
-    <h1>Create new Genre</h1>
+    <h1>Creation de nouveau genre</h1>
 
     {{ include('genre/_form.html.twig') }}
 
-    <a href="{{ path('genre_index') }}">back to list</a>
+    <a class="btn btn-primary" href="{{ path('genre_index') }}">back to list</a>
 {% endblock %}

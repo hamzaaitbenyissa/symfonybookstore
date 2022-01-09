@@ -1,0 +1,29 @@
+h1 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    background: url('../images/books.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+
+a {
+    text-decoration: wavy;
+    margin-left: 4px;
+}
+
+#edit {
+    color: azure;
+}
+
+#voir {
+    color: rgb(255, 230, 0);
+}
