@@ -34,9 +34,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('livre_index') }}">back to list</a>
+    <a href="{{ path('livre_index') }}" class="btn btn-primary" >back to list</a>
 
-    <a href="{{ path('livre_edit', {'id': livre.id}) }}">edit</a>
+    <a href="{{ path('livre_edit', {'id': livre.id}) }}" class="btn btn-primary">edit</a>
 
+	{% if app.user and app.user.roles[0]=="ROLE_ADMIN"  %}
     {{ include('livre/_delete_form.html.twig') }}
+    {% endif %}
 {% endblock %}

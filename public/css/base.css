@@ -1,0 +1,18 @@
+a.login {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+
+
+.dataTables_filter,
+.dataTables_length,
+#example_info {
+
+    color: white;
+    font-weight: bolder;
+
+}

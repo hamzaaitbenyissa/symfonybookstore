@@ -5,16 +5,8 @@ h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-a.login {
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-    font-family: monospace;
-    font-style: oblique;
-    font-weight: bold;
-}
-
 body {
-    background: url('../images/background2.jpg') no-repeat center center fixed;
+    background: url('../images/users.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

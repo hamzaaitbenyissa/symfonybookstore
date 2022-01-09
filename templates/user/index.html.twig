@@ -3,7 +3,7 @@
 {% block title %}User index{% endblock %}
 
 {% block style %}
-	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/users.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -27,8 +27,8 @@
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 <td>{{ user.password }}</td>
                 <td>
-                    <a class="" href="{{ path('user_show', {'id': user.id}) }}">Show<i class="bi bi-eye-fill"></i></a>
-                    <a class="" href="{{ path('user_edit', {'id': user.id}) }}">Edit<i class="bi bi-pencil-square"></i></a>
+                    <a class="" href="{{ path('user_show', {'id': user.id}) }}"><i class="bi bi-eye-fill"></i></a>
+                    <a class="" href="{{ path('user_edit', {'id': user.id}) }}"><i class="bi bi-pencil-square"></i></a>
                 </td>
             </tr>
         {% else %}
